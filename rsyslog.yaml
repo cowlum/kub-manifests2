@@ -18,7 +18,7 @@ data:
     global(net.enableDNS="off")
   my-logrotate.conf:   |-
     /var/log/my.log {
-        rotate 3
+        rotate 4
         copytruncate
         size 100M
         missingok
