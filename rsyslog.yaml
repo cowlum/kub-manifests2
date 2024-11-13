@@ -4,6 +4,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: syslog
+  namespace: logging
   labels:
     helm.sh/chart: rsyslog-0.1.1
     app.kubernetes.io/name: rsyslog
@@ -30,6 +31,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: syslogs
+  namespace: logging
   labels:
     helm.sh/chart: rsyslog-0.1.1
     app.kubernetes.io/name: rsyslog
@@ -48,6 +50,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: rsyslog
+  namespace: logging
   labels:
     helm.sh/chart: rsyslog-0.1.1
     app.kubernetes.io/name: rsyslog
@@ -70,6 +73,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: rsyslog
+  namespace: logging
   labels:
     helm.sh/chart: rsyslog-0.1.1
     app.kubernetes.io/name: rsyslog
