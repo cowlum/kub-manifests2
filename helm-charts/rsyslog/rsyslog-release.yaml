@@ -1,0 +1,20 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: rsyslog
+  namespace: logging
+spec:
+  chart:
+    spec:
+      chart: ./charts/rsyslog
+      sourceRef:
+        kind: GitRepository
+        name: my-git-repo
+      version: "8.0.0"  # Specify the version of the Helm chart
+  values:
+    # Add any custom values you want to override here
+    service:
+      type: ClusterIP
+      port: 514
+    # Other values for rsyslog configuration
+
